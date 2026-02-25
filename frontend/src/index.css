@@ -1,0 +1,266 @@
+:root {
+    /* Ultra Premium Dark Theme variables */
+    --bg-color: #050505;
+    /* Deepest black */
+    --bg-secondary: #0a0a0a;
+    /* Very dark gray */
+    --text-primary: #ffffff;
+    /* Pure white */
+    --text-secondary: #a1a1aa;
+    /* Zinc 400 */
+    --accent-primary: #00f0ff;
+    /* Cyber Cyan */
+    --accent-secondary: #ff003c;
+    /* Cyber Red/Pink */
+    --accent-tertiary: #7000ff;
+    /* Deep Purple */
+    --accent-gradient: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 50%, var(--accent-secondary) 100%);
+    --glass-bg: rgba(10, 10, 10, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-highlight: rgba(255, 255, 255, 0.1);
+    --success: #00ff66;
+    /* Neon Green */
+    --surface: #121212;
+
+    --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --radius-sm: 6px;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+        radial-gradient(circle at 0% 0%, rgba(112, 0, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(0, 240, 255, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.gradient-text {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-top: 1px solid var(--glass-highlight);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.glass-panel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Base button styles */
+.btn {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    outline: none;
+    backdrop-filter: blur(10px);
+}
+
+.btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary {
+    background: var(--accent-gradient);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(112, 0, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover:not(:disabled) {
+    box-shadow: 0 8px 25px rgba(0, 240, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+    font-family: var(--font-sans);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* App Header */
+.app-header {
+    padding: 2rem 0 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.app-title {
+    font-size: 4rem;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+}
+
+.app-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* Chart container adjustments */
+.recharts-default-tooltip {
+    background-color: var(--bg-secondary) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-top: 1px solid var(--glass-highlight) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.recharts-tooltip-item {
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+}
