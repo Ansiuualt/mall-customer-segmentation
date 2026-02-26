@@ -40,7 +40,7 @@ python -m uvicorn main:app --reload --port 8000
 3. **Run the Frontend UI**
 *(In a separate terminal)*
 ```bash
-cd frontend
+cd frontend 
 npm install
 npm run dev
 ```
