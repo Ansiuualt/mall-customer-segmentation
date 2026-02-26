@@ -30,14 +30,21 @@ git clone https://github.com/your-username/mall-customer-segmentation.git
 cd "mall-customer-segmentation"
 ```
 
-2. **Run the Backend API**
+2. **Train the Model**
+Before running the backend, you need to train the machine learning model:
+```bash
+cd backend
+python train.py
+```
+
+3. **Run the Backend API**
 ```bash
 cd backend
 pip install -r requirements.txt
 python -m uvicorn main:app --reload --port 8000
 ```
 
-3. **Run the Frontend UI**
+4. **Run the Frontend UI**
 *(In a separate terminal)*
 ```bash
 cd frontend 
@@ -46,6 +53,15 @@ npm run dev
 ```
 
 Visit the frontend at [http://localhost:5173/](http://localhost:5173/) to interact with the model!
+
+## 👥 Team Members
+
+- **Anshuman Maharana** (Team Leader)
+- **Aditya Kumar Pradhan**
+- **Harjit Das**
+- **Ayush Rath**
+- **Binayak Mahapatra**
+- **Swayam Siddharth Sahoo**
 
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
