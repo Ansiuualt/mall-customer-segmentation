@@ -68,9 +68,9 @@ def predict_segment(customer: CustomerData):
         segment_names = {
             0: "Standard (Average Income, Average Spending)",
             1: "Target (High Income, High Spending)",
-            2: "Careful (High Income, Low Spending)",
+            2: "Careless (Low Income, High Spending)",
             3: "Sensible (Low Income, Low Spending)",
-            4: "Careless (Low Income, High Spending)"
+            4: "Careful (High Income, Low Spending)"
         }
         
         segment_name = segment_names.get(int(cluster), f"Cluster {cluster}")
